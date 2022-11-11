@@ -1,0 +1,83 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+
+/* CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #404258;
+}
+
+main {
+  text-align: center;
+}
+
+h1 {
+  font-size: 5vw;
+  font-family: "Russo One", sans-serif;
+  text-align: center;
+  color: rgb(255, 251, 42);
+}
+
+h2 {
+  font-size: 2vw;
+  font-family: "Russo One", sans-serif;
+  margin-top: 25px;
+  text-align: center;
+  color: rgb(255, 39, 39);
+}
+
+.start {
+  background-color: rgb(235, 203, 0);
+  border: none;
+  color: white;
+  margin-top: 25px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 25px;
+}
+
+.home {
+  background-color: rgb(235, 203, 0);
+  border: none;
+  color: white;
+  margin-top: 25px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 25px;
+}
+
+button > a {
+  font-size: 32px;
+  text-decoration: none;
+  color: black;
+}
+
+footer p {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: right;
+}
+
+#questions {
+  border: 1px solid white;
+}
+
+.question {
+  background-color: rgb(235, 203, 0);
+  font-size: 32px;
+  width: 10rem;
+  margin: 25px;
+  padding: 2px;
+  border-radius: 20px;
+}
