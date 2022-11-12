@@ -31,6 +31,12 @@ h2 {
   color: rgb(255, 39, 39);
 }
 
+header p {
+  font-size: 2vw;
+  font-family: "Russo One", sans-serif;
+  color: rgb(255, 255, 255);
+}
+
 .start {
   background-color: rgb(235, 203, 0);
   border: none;
@@ -41,23 +47,6 @@ h2 {
   text-decoration: none;
   display: inline-block;
   border-radius: 25px;
-}
-
-.home {
-  background-color: rgb(235, 203, 0);
-  border: none;
-  color: white;
-  margin-top: 25px;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 25px;
-}
-
-button > a {
-  font-size: 32px;
-  text-decoration: none;
-  color: black;
 }
 
 footer p {
@@ -80,4 +69,11 @@ footer p {
   margin: 25px;
   padding: 2px;
   border-radius: 20px;
+}
+
+.correct {
+  background-color: green;
+}
+.confirm {
+  background-color: green;
 }
