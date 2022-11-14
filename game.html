@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/CinemaQuiz/css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <link
       rel="shortcut icon"
       href="/CinemaQuiz/img/favicon.ico"
@@ -15,12 +15,13 @@
   <body>
     <header>
       <p id="count"></p>
+      <p><a id="exit" href="index.html">Exit</a></p>
       <h1>Quiz Game</h1>
     </header>
 
     <main>
       <section id="question">
-        <h2>Question</h2>
+        <h2 id="questionText">Question</h2>
       </section>
       <section id="questions">
         <button class="question" id="first">Answer 1</button>
@@ -33,6 +34,6 @@
     <footer>
       <p>Copyright 2022 Pablo & Brais-HackABoss</p>
     </footer>
-    <script src="./js/script.js"></script>
+    <script type="module" src="./js/script.js"></script>
   </body>
 </html>

@@ -1,5 +1,4 @@
 "use strict";
-
 //Variables Globales
 //Asignacion de botones HTML
 const question = document.querySelector("#question");
@@ -26,7 +25,7 @@ const JSON = async (url) => {
   }
 };
 
-async function checkAnswer(userAnswer) {
+const checkAnswer = async (userAnswer) => {
   let b = await JSON("./js/quiz.json");
   if (userAnswer === b[actualQuestion].correct) {
     console.log("Acierto");
@@ -35,22 +34,48 @@ async function checkAnswer(userAnswer) {
     console.log("Fallo");
     return false;
   }
-}
+};
 
-async function renderQuestion() {
+const renderQuestion = async () => {
+  if (actualQuestion === 10) {
+    renderFinal();
+    return 0;
+  }
   let a = await JSON("./js/quiz.json");
   //Impresion de preguntas y respuestas
   //Asignacion de textos desde el JSON
   count.innerHTML = `Puntuacion: ${score} `;
-  question.innerHTML = "<h2>" + a[actualQuestion].question + "</h2>";
+  question.innerHTML =
+    "<h2 id='questionText'>" + a[actualQuestion].question + "</h2>";
   firstAnswer.innerHTML = a[actualQuestion].answers[0];
   secondAnswer.innerHTML = a[actualQuestion].answers[1];
   thirdAnswer.innerHTML = a[actualQuestion].answers[2];
   fourthAnswer.innerHTML = a[actualQuestion].answers[3];
-}
+};
+
+const renderFinal = () => {
+  addReplay();
+  count.remove();
+  question.innerHTML = `<h2 id='questionText'>Final Score: ${score} /10</h2>`;
+  firstAnswer.remove();
+  secondAnswer.remove();
+  thirdAnswer.remove();
+  fourthAnswer.remove();
+};
+
+const addReplay = () => {
+  const replayButton = document.createElement("a");
+  const newContent = document.createTextNode("Replay");
+  // replayButton.classList.toggle("question");
+  replayButton.classList.toggle("replay");
+  replayButton.href = "index.html";
+  replayButton.appendChild(newContent);
+  document.body.append(replayButton);
+};
 
 const game = () => {
   renderQuestion();
+  //PRIMERA RESPUESTA
   firstAnswer.addEventListener("click", async (e) => {
     const button = e.target.innerText;
     const check = await checkAnswer(button);
@@ -58,15 +83,23 @@ const game = () => {
       firstAnswer.classList.toggle("correct");
       score++;
       actualQuestion++;
-      renderQuestion();
+      setTimeout(() => {
+        renderQuestion();
+      }, 300);
     } else {
+      firstAnswer.classList.toggle("fail");
       actualQuestion++;
-      renderQuestion();
+      setTimeout(() => {
+        renderQuestion();
+      }, 300);
     }
     setTimeout(() => {
       firstAnswer.classList.remove("correct");
+      firstAnswer.classList.remove("fail");
     }, 300);
   });
+
+  //SEGUNDA RESPUESTA
   secondAnswer.addEventListener("click", async (e) => {
     const button = e.target.innerText;
     const check = await checkAnswer(button);
@@ -74,16 +107,23 @@ const game = () => {
       secondAnswer.classList.toggle("correct");
       score++;
       actualQuestion++;
-      renderQuestion();
+      setTimeout(() => {
+        renderQuestion();
+      }, 300);
     } else {
+      secondAnswer.classList.toggle("fail");
       actualQuestion++;
-      renderQuestion();
+      setTimeout(() => {
+        renderQuestion();
+      }, 300);
     }
     setTimeout(() => {
       secondAnswer.classList.remove("correct");
+      secondAnswer.classList.remove("fail");
     }, 300);
   });
 
+  //TERCERA RESPUESTA
   thirdAnswer.addEventListener("click", async (e) => {
     const button = e.target.innerText;
     const check = await checkAnswer(button);
@@ -91,16 +131,23 @@ const game = () => {
       thirdAnswer.classList.toggle("correct");
       score++;
       actualQuestion++;
-      renderQuestion();
+      setTimeout(() => {
+        renderQuestion();
+      }, 300);
     } else {
+      thirdAnswer.classList.toggle("fail");
       actualQuestion++;
-      renderQuestion();
+      setTimeout(() => {
+        renderQuestion();
+      }, 300);
     }
     setTimeout(() => {
       thirdAnswer.classList.remove("correct");
+      thirdAnswer.classList.remove("fail");
     }, 300);
   });
 
+  //CUARTA RESPUESTA
   fourthAnswer.addEventListener("click", async (e) => {
     const button = e.target.innerText;
     const check = await checkAnswer(button);
@@ -108,15 +155,25 @@ const game = () => {
       fourthAnswer.classList.toggle("correct");
       score++;
       actualQuestion++;
-      renderQuestion();
+      setTimeout(() => {
+        renderQuestion();
+      }, 300);
     } else {
+      fourthAnswer.classList.toggle("fail");
       actualQuestion++;
-      renderQuestion();
+      setTimeout(() => {
+        renderQuestion();
+      }, 300);
     }
     setTimeout(() => {
       fourthAnswer.classList.remove("correct");
+      fourthAnswer.classList.remove("fail");
     }, 300);
   });
 };
 
+//Comodines
+
 game();
+
+//Deploy: NETLIFY

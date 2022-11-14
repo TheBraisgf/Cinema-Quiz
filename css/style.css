@@ -21,20 +21,44 @@ h1 {
   font-family: "Russo One", sans-serif;
   text-align: center;
   color: rgb(255, 251, 42);
+  display: block;
 }
 
-h2 {
+#questionText {
+  font-size: 3vw;
+  margin: 0px 20vw;
+  background-color: white;
+  /* font-family: "Russo One", sans-serif; */
+  margin-top: 25px;
+  text-align: center;
+  color: rgb(255, 39, 39);
+  border-radius: 10px;
+}
+
+#subtitle {
   font-size: 2vw;
+  margin: 0px 20vw;
   font-family: "Russo One", sans-serif;
   margin-top: 25px;
   text-align: center;
   color: rgb(255, 39, 39);
 }
 
-header p {
+#count {
   font-size: 2vw;
   font-family: "Russo One", sans-serif;
   color: rgb(255, 255, 255);
+  margin: 20px 0px 20px 20px;
+}
+
+#exit {
+  font-size: 2vw;
+  font-family: "Russo One", sans-serif;
+  color: rgb(255, 255, 255);
+  background-color: green;
+  padding: 5px;
+  border-radius: 25px;
+  margin: 20px 0px 20px 20px;
 }
 
 .start {
@@ -58,14 +82,14 @@ footer p {
   text-align: right;
 }
 
-#questions {
+/* #questions {
   border: 1px solid white;
-}
+} */
 
 .question {
   background-color: rgb(235, 203, 0);
-  font-size: 32px;
-  width: 10rem;
+  font-size: 2rem;
+  width: 20vw;
   margin: 25px;
   padding: 2px;
   border-radius: 20px;
@@ -74,6 +98,24 @@ footer p {
 .correct {
   background-color: green;
 }
-.confirm {
-  background-color: green;
+.fail {
+  background-color: red;
+}
+
+a {
+  text-decoration: none;
+  font-size: 32px;
+  color: black;
+}
+
+.replay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(235, 203, 0);
+  font-size: 2rem;
+  width: 20vw;
+  margin-left: 38vw;
+  padding: 2px;
+  border-radius: 20px;
 }
