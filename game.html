@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <link
       rel="shortcut icon"
       href="/CinemaQuiz/img/favicon.ico"
@@ -13,27 +13,29 @@
     <title>PYR HAB</title>
   </head>
   <body>
-    <header>
-      <p id="count"></p>
-      <p><a id="exit" href="index.html">Exit</a></p>
-      <h1>Quiz Game</h1>
-    </header>
+    <div id="gamePrincipal">
+      <header>
+        <h1 class="glow-stop">Cinema Quiz</h1>
+        <p id="count"></p>
+      </header>
 
-    <main>
-      <section id="question">
-        <h2 id="questionText">Question</h2>
-      </section>
-      <section id="questions">
-        <button class="question" id="first">Answer 1</button>
-        <button class="question" id="second">Answer 2</button>
-        <br />
-        <button class="question" id="third">Answer 3</button>
-        <button class="question" id="fourth">Answer 4</button>
-      </section>
-    </main>
-    <footer>
-      <p>Copyright 2022 Pablo & Brais-HackABoss</p>
-    </footer>
+      <main>
+        <section id="question">
+          <h2 id="questionText">Question</h2>
+        </section>
+        <section id="questions">
+          <button class="question" id="first">Answer 1</button>
+          <button class="question" id="second">Answer 2</button>
+          <button class="question" id="third">Answer 3</button>
+          <button class="question" id="fourth">Answer 4</button>
+        </section>
+      </main>
+      <footer>
+        <a target="_blank" href="https://github.com/pabloberu/CinemaQuiz">
+          Copyright 2022 Pablo & Brais - HackABoss</a
+        >
+      </footer>
+    </div>
     <script type="module" src="./js/script.js"></script>
   </body>
 </html>

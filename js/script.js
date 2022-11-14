@@ -6,6 +6,7 @@ const firstAnswer = document.querySelector("#first");
 const secondAnswer = document.querySelector("#second");
 const thirdAnswer = document.querySelector("#third");
 const fourthAnswer = document.querySelector("#fourth");
+const answerDiv = document.querySelector("#questions");
 const count = document.querySelector("#count");
 let actualQuestion = 0;
 let score = 0;
@@ -37,7 +38,7 @@ const checkAnswer = async (userAnswer) => {
 };
 
 const renderQuestion = async () => {
-  if (actualQuestion === 10) {
+  if (actualQuestion === 5) {
     renderFinal();
     return 0;
   }
@@ -61,12 +62,12 @@ const renderFinal = () => {
   secondAnswer.remove();
   thirdAnswer.remove();
   fourthAnswer.remove();
+  answerDiv.remove();
 };
 
 const addReplay = () => {
   const replayButton = document.createElement("a");
   const newContent = document.createTextNode("Replay");
-  // replayButton.classList.toggle("question");
   replayButton.classList.toggle("replay");
   replayButton.href = "index.html";
   replayButton.appendChild(newContent);
