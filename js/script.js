@@ -93,15 +93,15 @@ const addReplay = async () => {
   //ADD SHARE BUTTON
   const shareButton = document.createElement("button");
   shareButton.classList.toggle("replayButton");
-  shareButton.innerHTML = `<a class='replay' href='whatsapp://send?text=Hey! I got a ${score}/10 points on CinemaQuiz! Try to beat me on *URL*!' data-action="share/whatsapp/share"  
-  target="_blank">Share with your friends!</>`;
+  shareButton.innerHTML = `<a class='replay' href='whatsapp://send?text=Hey! I got a ${score}/10 points on CinemaQuiz! Try to beat me on https://cinemaquiz.netlify.app/!' data-action="share/whatsapp/share"  
+  target="_blank">Share with your friends</>`;
   document.querySelector(".gamePrincipal").append(shareButton);
   //SHARE FUNCTIONALITY
   //Share data:
   const shareData = {
     title: "Cinema QUIZ",
-    text: "Guess everything and challenge your friends!",
-    url: "www.google.es",
+    text: `Hey! I got a ${score}/10 points on CinemaQuiz! Try to beat me`,
+    url: "https://cinemaquiz.netlify.app/",
   };
   shareButton.addEventListener("click", async () => {
     try {
