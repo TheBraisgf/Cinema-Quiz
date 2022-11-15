@@ -7,6 +7,7 @@ const secondAnswer = document.querySelector("#second");
 const thirdAnswer = document.querySelector("#third");
 const fourthAnswer = document.querySelector("#fourth");
 const answerDiv = document.querySelector("#questions");
+const finalDiv = document.querySelector(".gamePrincipal");
 const count = document.querySelector("#count");
 let actualQuestion = 0;
 let score = 0;
@@ -38,17 +39,18 @@ const checkAnswer = async (userAnswer) => {
 };
 
 const renderQuestion = async () => {
-  if (actualQuestion === 5) {
+  if (actualQuestion === 10) {
     renderFinal();
     return 0;
   }
   let a = await JSON("./js/quiz.json");
   //Impresion de preguntas y respuestas
   //Asignacion de textos desde el JSON
-  count.innerHTML = `Puntuacion: ${score} `;
+  count.innerHTML = `Score: ${score} `;
   question.innerHTML =
     "<h2 id='questionText'>" + a[actualQuestion].question + "</h2>";
   firstAnswer.innerHTML = a[actualQuestion].answers[0];
+  //REMOVE OBJECT
   secondAnswer.innerHTML = a[actualQuestion].answers[1];
   thirdAnswer.innerHTML = a[actualQuestion].answers[2];
   fourthAnswer.innerHTML = a[actualQuestion].answers[3];
@@ -56,6 +58,8 @@ const renderQuestion = async () => {
 
 const renderFinal = () => {
   addReplay();
+  finalDiv.classList.toggle("gamePrincipal");
+  finalDiv.classList.toggle("finalVisual");
   count.remove();
   question.innerHTML = `<h2 id='questionText'>Final Score: ${score} /10</h2>`;
   firstAnswer.remove();
@@ -66,12 +70,15 @@ const renderFinal = () => {
 };
 
 const addReplay = () => {
-  const replayButton = document.createElement("a");
-  const newContent = document.createTextNode("Replay");
-  replayButton.classList.toggle("replay");
-  replayButton.href = "index.html";
-  replayButton.appendChild(newContent);
-  document.body.append(replayButton);
+  // const replayButton = document.createElement("a");
+  // const newContent = document.createTextNode("Replay");
+  // replayButton.classList.toggle("replay");
+  const replayButton = document.createElement("button");
+  replayButton.classList.toggle("replayButton");
+  replayButton.innerHTML = "<a class='replay' href='index.html'>Replay</>";
+  // replayButton.href = "index.html";
+  // replayButton.appendChild(newContent);
+  document.querySelector(".gamePrincipal").append(replayButton);
 };
 
 const game = () => {
