@@ -1,7 +1,7 @@
 "use strict";
 //Variables Globales
 //Asignacion de botones HTML
-const question = document.querySelector("#question");
+const questionText = document.querySelector("#questionText");
 const firstAnswer = document.querySelector("#first");
 const secondAnswer = document.querySelector("#second");
 const thirdAnswer = document.querySelector("#third");
@@ -27,33 +27,48 @@ const JSON = async (url) => {
   }
 };
 
-const checkAnswer = async (userAnswer) => {
-  let b = await JSON("./js/quiz.json");
-  if (userAnswer === b[actualQuestion].correct) {
-    console.log("Acierto");
-    return true;
-  } else {
-    console.log("Fallo");
-    return false;
+const randomNumber = (range, outputCount) => {
+  let newArray = [];
+  for (let i = 0; i <= range; i++) {
+    newArray.push(i);
   }
+  let result = [];
+
+  for (let i = 1; i <= outputCount; i++) {
+    const random = Math.floor(Math.random() * (range - i));
+    result.push(newArray[random]);
+    newArray[random] = newArray[range - i];
+  }
+  return result;
 };
 
-const renderQuestion = async () => {
+const renderQuestion = async (question) => {
   if (actualQuestion === 10) {
     renderFinal();
     return 0;
   }
+
+  let readQuestion = actualQuestion;
   let a = await JSON("./js/quiz.json");
   //Impresion de preguntas y respuestas
   //Asignacion de textos desde el JSON
   count.innerHTML = `Score: ${score} `;
-  question.innerHTML =
-    "<h2 id='questionText'>" + a[actualQuestion].question + "</h2>";
-  firstAnswer.innerHTML = a[actualQuestion].answers[0];
-  //REMOVE OBJECT
-  secondAnswer.innerHTML = a[actualQuestion].answers[1];
-  thirdAnswer.innerHTML = a[actualQuestion].answers[2];
-  fourthAnswer.innerHTML = a[actualQuestion].answers[3];
+  questionText.innerHTML =
+    "<h2 id='questionText'>" + a[question[readQuestion]].question + "</h2>";
+  firstAnswer.innerHTML = a[question[readQuestion]].answers[0];
+  secondAnswer.innerHTML = a[question[readQuestion]].answers[1];
+  thirdAnswer.innerHTML = a[question[readQuestion]].answers[2];
+  fourthAnswer.innerHTML = a[question[readQuestion]].answers[3];
+};
+
+const checkAnswer = async (userAnswer, question) => {
+  let readQuestion = actualQuestion;
+  let b = await JSON("./js/quiz.json");
+  if (userAnswer === b[question[readQuestion]].correct) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 const renderFinal = () => {
@@ -69,36 +84,52 @@ const renderFinal = () => {
   answerDiv.remove();
 };
 
-const addReplay = () => {
-  // const replayButton = document.createElement("a");
-  // const newContent = document.createTextNode("Replay");
-  // replayButton.classList.toggle("replay");
+const addReplay = async () => {
   const replayButton = document.createElement("button");
   replayButton.classList.toggle("replayButton");
   replayButton.innerHTML = "<a class='replay' href='index.html'>Replay</>";
-  // replayButton.href = "index.html";
-  // replayButton.appendChild(newContent);
   document.querySelector(".gamePrincipal").append(replayButton);
+
+  //ADD SHARE BUTTON
+  const shareButton = document.createElement("button");
+  shareButton.classList.toggle("replayButton");
+  shareButton.innerHTML = `<a class='replay' href='whatsapp://send?text=Hey! I got a ${score}/10 points on CinemaQuiz! Try to beat me on *URL*!' data-action="share/whatsapp/share"  
+  target="_blank">Share with your friends!</>`;
+  document.querySelector(".gamePrincipal").append(shareButton);
+  //SHARE FUNCTIONALITY
+  //Share data:
+  const shareData = {
+    title: "Cinema QUIZ",
+    text: "Guess everything and challenge your friends!",
+    url: "www.google.es",
+  };
+  shareButton.addEventListener("click", async () => {
+    try {
+      await navigator.share(shareData);
+    } catch (err) {}
+  });
+  //END OF SHARE
 };
 
 const game = () => {
-  renderQuestion();
+  let newQuestions = randomNumber(50, 10);
+  renderQuestion(newQuestions);
   //PRIMERA RESPUESTA
   firstAnswer.addEventListener("click", async (e) => {
     const button = e.target.innerText;
-    const check = await checkAnswer(button);
+    const check = await checkAnswer(button, newQuestions);
     if (check === true) {
       firstAnswer.classList.toggle("correct");
       score++;
       actualQuestion++;
       setTimeout(() => {
-        renderQuestion();
+        renderQuestion(newQuestions);
       }, 300);
     } else {
       firstAnswer.classList.toggle("fail");
       actualQuestion++;
       setTimeout(() => {
-        renderQuestion();
+        renderQuestion(newQuestions);
       }, 300);
     }
     setTimeout(() => {
@@ -110,19 +141,19 @@ const game = () => {
   //SEGUNDA RESPUESTA
   secondAnswer.addEventListener("click", async (e) => {
     const button = e.target.innerText;
-    const check = await checkAnswer(button);
+    const check = await checkAnswer(button, newQuestions);
     if (check === true) {
       secondAnswer.classList.toggle("correct");
       score++;
       actualQuestion++;
       setTimeout(() => {
-        renderQuestion();
+        renderQuestion(newQuestions);
       }, 300);
     } else {
       secondAnswer.classList.toggle("fail");
       actualQuestion++;
       setTimeout(() => {
-        renderQuestion();
+        renderQuestion(newQuestions);
       }, 300);
     }
     setTimeout(() => {
@@ -134,19 +165,19 @@ const game = () => {
   //TERCERA RESPUESTA
   thirdAnswer.addEventListener("click", async (e) => {
     const button = e.target.innerText;
-    const check = await checkAnswer(button);
+    const check = await checkAnswer(button, newQuestions);
     if (check === true) {
       thirdAnswer.classList.toggle("correct");
       score++;
       actualQuestion++;
       setTimeout(() => {
-        renderQuestion();
+        renderQuestion(newQuestions);
       }, 300);
     } else {
       thirdAnswer.classList.toggle("fail");
       actualQuestion++;
       setTimeout(() => {
-        renderQuestion();
+        renderQuestion(newQuestions);
       }, 300);
     }
     setTimeout(() => {
@@ -158,19 +189,19 @@ const game = () => {
   //CUARTA RESPUESTA
   fourthAnswer.addEventListener("click", async (e) => {
     const button = e.target.innerText;
-    const check = await checkAnswer(button);
+    const check = await checkAnswer(button, newQuestions);
     if (check === true) {
       fourthAnswer.classList.toggle("correct");
       score++;
       actualQuestion++;
       setTimeout(() => {
-        renderQuestion();
+        renderQuestion(newQuestions);
       }, 300);
     } else {
       fourthAnswer.classList.toggle("fail");
       actualQuestion++;
       setTimeout(() => {
-        renderQuestion();
+        renderQuestion(newQuestions);
       }, 300);
     }
     setTimeout(() => {
@@ -179,8 +210,6 @@ const game = () => {
     }, 300);
   });
 };
-
-//Comodines
 
 game();
 
