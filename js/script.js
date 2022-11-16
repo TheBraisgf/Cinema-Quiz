@@ -8,6 +8,7 @@ const thirdAnswer = document.querySelector("#third");
 const fourthAnswer = document.querySelector("#fourth");
 const answerDiv = document.querySelector("#questions");
 const finalDiv = document.querySelector(".gamePrincipal");
+const main = document.querySelector("main");
 const count = document.querySelector("#count");
 let actualQuestion = 0;
 let score = 0;
@@ -73,10 +74,13 @@ const checkAnswer = async (userAnswer, question) => {
 
 const renderFinal = () => {
   addReplay();
+  main.classList.toggle("mainScaleAni");
+  setTimeout(() => {
+    question.innerHTML = `<h2 class='questionText'>Final Score: ${score} /10</h2>`;
+  }, 500);
   finalDiv.classList.toggle("gamePrincipal");
   finalDiv.classList.toggle("finalVisual");
   count.remove();
-  question.innerHTML = `<h2 id='questionText'>Final Score: ${score} /10</h2>`;
   firstAnswer.remove();
   secondAnswer.remove();
   thirdAnswer.remove();
@@ -212,5 +216,3 @@ const game = () => {
 };
 
 game();
-
-//Deploy: NETLIFY

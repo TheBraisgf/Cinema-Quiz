@@ -51,6 +51,15 @@ h1 {
   border-radius: 10px;
 }
 
+.questionText {
+  font-size: 4vw;
+  padding: 1.5rem;
+  margin: 0px 1rem 0rem 1rem;
+  font-family: "Press Start 2P", cursive;
+  background-color: transparent;
+  color: red;
+}
+
 #count {
   text-align: center;
   font-size: 5vw;
@@ -105,8 +114,18 @@ footer a {
   padding: 5px;
 }
 
+.question:hover {
+  border: 3px solid black;
+  cursor: pointer;
+  cursor: hand;
+}
+
 .correct {
   background-color: green;
+}
+
+.disableHover {
+  pointer-events: none;
 }
 .fail {
   background-color: red;
@@ -224,6 +243,75 @@ figcaption {
 
 .letsQuiz {
   margin: 0px 1vh 6vh 1vh;
+}
+
+/* ANIMACIONES */
+
+.leftAni {
+  animation-name: leftAnimation;
+  animation-duration: 1000ms;
+  animation-iteration-count: 1;
+}
+.rightAni {
+  animation-name: rightAnimation;
+  animation-duration: 1000ms;
+  animation-iteration-count: 1;
+}
+
+.scaleAni {
+  animation-name: scaleAnimation;
+  animation-duration: 1000ms;
+  animation-iteration-count: 1;
+}
+
+.mainScaleAni {
+  animation-name: mainScaleAnimation;
+  animation-duration: 500ms;
+  animation-iteration-count: 1;
+}
+
+@keyframes rightAnimation {
+  from {
+    transform: translate(110%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleAnimation {
+  from {
+    transform: scale(20%);
+    opacity: 0;
+  }
+  to {
+    transform: scale(100%);
+    opacity: 1;
+  }
+}
+
+@keyframes mainScaleAnimation {
+  from {
+    transform: scale(100%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0%);
+    opacity: 0;
+  }
+}
+
+@keyframes leftAnimation {
+  from {
+    transform: translate(-110%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0%);
+    opacity: 1;
+  }
 }
 
 @media (min-width: 600px) {
