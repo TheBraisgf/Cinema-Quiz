@@ -1,3 +1,4 @@
+
 # 📽️ Cinema Quiz 🎞️
 
 Cinema Quiz is a movie trivia game created as the first project of the Hack A Boss coding bootcamp.
@@ -40,14 +41,21 @@ Final Screen:
 Also, we would feel very flattered if our first project is an inspiration for others who are starting in the wonderful world of JavaScript
 
 
-## 💡Authors 
-
-- [@TheBraisgf](https://github.com/TheBraisgf):
+# 💡Authors 
 
 
-    [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/)
-
-    [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/)
 
 
-- [@Pabloberu](https://github.com/pabloberu)
+## [![linkedin](https://img.shields.io/badge/TheBraisGF-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/TheBraisgf)
+
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/braisgf/)
+
+[![codewars](https://img.shields.io/badge/Codewars-B1361E?style=for-the-badge&logo=Codewars&logoColor=white)](https://www.codewars.com/users/Braisgf)
+
+[![instabio](https://img.shields.io/badge/SOCIAL_MEDIA-FFA500?style=for-the-badge&logo=rss&logoColor=white)](https://instabio.cc/3030409IOuIr3)
+
+
+
+
+## [![linkedin](https://img.shields.io/badge/pabloberu-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/pabloberu)
+
