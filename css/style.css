@@ -1,9 +1,7 @@
-/* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Limelight&display=swap");
 
-/* CSS */
 * {
   margin: 0;
   padding: 0;
@@ -225,12 +223,6 @@ a {
   background-color: #404258;
 }
 
-figcaption {
-  color: white;
-  font-size: 4.5vw;
-  margin: 0px 1.5rem;
-}
-
 .tutorialDiv {
   display: flex;
   flex-direction: column;
@@ -240,8 +232,6 @@ figcaption {
   font-size: 4rem;
   margin-bottom: 1rem;
 }
-
-/* ANIMACIONES */
 
 .leftAni {
   animation-name: leftAnimation;
