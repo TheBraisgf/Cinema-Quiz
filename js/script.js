@@ -8,7 +8,6 @@ const answerDiv = document.querySelector("#questions");
 const finalDiv = document.querySelector(".gamePrincipal");
 const main = document.querySelector("main");
 const count = document.querySelector("#count");
-const startButton = document.querySelector("#startButton");
 let actualQuestion = 0;
 let score = 0;
 
@@ -49,8 +48,6 @@ const renderQuestion = async (question) => {
 
   let readQuestion = actualQuestion;
   let a = await JSON("./js/quiz.json");
-  //Impresion de preguntas y respuestas
-  //Asignacion de textos desde el JSON
   count.innerHTML = `Score: ${score} `;
   questionText.innerHTML =
     "<h2 id='questionText'>" + a[question[readQuestion]].question + "</h2>";
@@ -96,7 +93,7 @@ const addReplay = async () => {
   const shareButton = document.createElement("button");
   shareButton.classList.toggle("replayButton");
   shareButton.innerHTML = `<a class='replay' href='whatsapp://send?text=Hey! I got a ${score}/10 points on CinemaQuiz! Try to beat me on https://cinemaquiz.netlify.app/!' data-action="share/whatsapp/share"  
-  target="_blank">Share with your friends</>`;
+  >Share with your friends</>`;
   document.querySelector(".gamePrincipal").append(shareButton);
 
   const shareData = {
