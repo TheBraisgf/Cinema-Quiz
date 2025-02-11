@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+body {
+  font-family: "Press Start 2P", cursive;
+  background: #2c2c3c;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Título neón restaurado */
+.game-title {
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px #ffff33, 0 0 20px #ffea00, 0 0 30px #ffd700;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* Feedback en respuestas */
+.correct {
+  background-color: #2ecc71 !important; /* Verde */
+}
+
+.incorrect {
+  background-color: #e74c3c !important; /* Rojo */
+}
+
+/* Animación de feedback */
+.correct,
+.incorrect {
+  transition: background-color 0.5s ease-in-out;
+}
+.quiz-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Barra de progreso */
+#progress-bar-container {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+#progress-bar {
+  height: 10px;
+  width: 0%;
+  background: #f1c40f;
+  transition: width 0.3s;
+}
+
+/* Botones de respuesta */
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 1em;
+  background: #3498db;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+h2 {
+  line-height: 2rem;
+}
+
+/* Temporizador y puntuación */
+#timer,
+#score {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+/* Footer con enlaces */
+footer {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+footer a {
+  color: #34c759;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

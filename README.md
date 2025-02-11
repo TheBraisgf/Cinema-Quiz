@@ -1,6 +1,8 @@
-# 📽️ Cinema Quiz 🎞️
+# 🎬 Cinema Quiz 2.0 | A New Trivia Experience
 
-Cinema Quiz is a movie trivia game created as the first project of the Hack A Boss coding bootcamp.
+"The game that tests your cinephile knowledge while bringing back the essence of classic arcade quizzes."
+
+🚀 Cinema Quiz has evolved from a simple bootcamp project to a fully improved movie trivia experience, with new mechanics, enhanced UI, sound effects, and a more dynamic challenge system.
 
 ## ❕Description
 
@@ -8,34 +10,33 @@ The game is simple.
 You must correctly answer ten questions about the cinephile culture.
 At the end, you can play again or even share the game with your friends to see who is the best.
 
-## 🧠 Knowledge used:
+## 🏗️ Tech Stack & Features
 
-- DOM Manipulation
-- URL fetch
-- JS Async & promises
-- CSS, Flex & Grid
-- Responsive methods
-- Error management
-- Audio Management
-- Social Sharing in JS Vanilla
-- Deploy With Netlify
+- HTML, CSS, JS Vanilla – Clean and optimized frontend.
+- DOM Manipulation – Dynamic UI updates based on user input.
+- Fetch API & Async JS – Real-time question fetching from OMDb API.
+- CSS Grid & Flexbox – Smooth responsive design.
+- Error Handling & User Feedback – Prevents API failures from breaking the game.
+- Audio Management – Interactive sound effects.
+- Social Sharing in Vanilla JS – Easy integration with social platforms.
+- Deployed with Netlify – Lightweight and fast hosting.
 
-## Screenshots
+## 🛠 What's New in Version 2.0?
 
-Landing Page:
-![Landing Page](https://i.imgur.com/orDidK0.png)
-Tutorial:
-![Tutorial](https://i.imgur.com/qTW8sNV.png)
-In Game:
-![In Game](https://i.imgur.com/t8B0ZQn.png)
-Final Screen:
-![Final Screen](https://i.imgur.com/i1BfoQ4.png)
+- ✅ New UI – Modern, sleek, and immersive arcade-inspired design.
+- ✅ Live API Integration – Questions now come dynamically from The Open Movie Database (OMDb)
+- ✅ Sound Effects – Retro sounds for correct/wrong answers, game start, and victory.
+- ✅ New Game Flow – A tutorial before the game and a scoreboard at the end.
+- ✅ Interactive Sharing – Share your score directly to X (Twitter), WhatsApp, and Email.
+- ✅ Neon Aesthetics – Inspired by old-school quiz shows and cyberpunk vibes.
 
 ## ❓ FAQ
 
 #### + Will there be more updates?
 
--- Cinema Quiz was born as a simple project to learn and show knowledge, but we don't rule out working on new features for a 2.0 version.
+-- Cinema Quiz was born as a learning project and, although we have made more modern adjustments in version 2, we do not believe that it will add much more to it.
+
+Who knows, maybe the next step is a game in Unity.
 
 #### + Can I use the code to make my own quiz?
 
@@ -52,4 +53,4 @@ Also, we would feel very flattered if our first project is an inspiration for ot
 
 [![instabio](https://img.shields.io/badge/SOCIAL_MEDIA-FFA500?style=for-the-badge&logo=rss&logoColor=white)](https://instabio.cc/3030409IOuIr3)
 
-## [![linkedin](https://img.shields.io/badge/pabloberu-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/pabloberu)
+## [![linkedin](https://img.shields.io/badge/pabloberu-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/PabloBeRuiberu)

@@ -1,34 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <title>Cinema Quiz - Tutorial</title>
+    <link rel="stylesheet" href="/css/tutorial.css" />
     <link rel="shortcut icon" href="/img/quiz.ico" type="image/x-icon" />
-    <title>Cinema Quiz</title>
   </head>
   <body>
     <header>
-      <h1 class="glow-stop" id="tutorialTitle">CINEMA QUIZ</h1>
+      <h1 class="neon-title" onclick="goHome()">CINEMA QUIZ</h1>
     </header>
 
-    <main>
-      <div class="tutorialDiv">
+    <main class="tutorial-container">
+      <div class="tutorial-section">
         <figure>
           <figcaption>
-            Your objective is to guess the correct answer 10 questions with four
-            possible options. You can click or press the correct number
-            (1,2,3,4)
+            Responde correctamente a 10 preguntas de cine. Cada pregunta tiene 4
+            opciones.
           </figcaption>
-          <img class="tutorialImg" src="/img/tutorial1.svg" alt="game" />
-        </figure>
-        <figure>
-          <figcaption>Guess everything and challenge your friends!</figcaption>
-          <img class="tutorialImg" src="/img/tutorial2.png" alt="rank" />
         </figure>
       </div>
-      <a class="start" href="game.html" id="start">Let's Quiz!</a>
+
+      <div class="tutorial-section">
+        <figure>
+          <img class="tutorial-img" src="/img/tutorial2.png" alt="ranking" />
+          <figcaption>
+            ¡Desafía a tus amigos y consigue la mejor puntuación!
+          </figcaption>
+        </figure>
+      </div>
+
+      <a class="start-button" href="game.html">¡Jugar ahora!</a>
     </main>
+    <footer>
+      <p>
+        &copy;2024
+        <a href="https://github.com/TheBraisgf" target="_blank">Brais</a> &
+        <a href="https://github.com/PabloBeRui" target="_blank">Pablo</a>
+      </p>
+    </footer>
+
+    <script>
+      function goHome() {
+        window.location.href = "index.html";
+      }
+    </script>
   </body>
 </html>

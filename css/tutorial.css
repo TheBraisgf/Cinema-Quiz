@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+body {
+  font-family: "Press Start 2P", cursive;
+  background: #2c2c3c;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+.neon-title {
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px #ffff33, 0 0 20px #ffea00, 0 0 30px #ffd700;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.tutorial-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tutorial-section {
+  margin-bottom: 30px;
+}
+
+.tutorial-img {
+  width: 80%;
+  border-radius: 10px;
+}
+
+figcaption {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* Botón de inicio */
+.start-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: #ff0000;
+  border: 2px solid #ff0000;
+  background: transparent;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.start-button:hover {
+  background: #ff0000;
+  color: white;
+  box-shadow: 0 0 10px #ff0000;
+}
+/* Footer con enlaces */
+footer {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+footer a {
+  color: #34c759;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

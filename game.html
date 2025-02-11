@@ -1,32 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <title>Cinema Quiz - Juego</title>
+    <link rel="stylesheet" href="/css/game.css" />
     <link rel="shortcut icon" href="/img/quiz.ico" type="image/x-icon" />
-    <title>Cinema Quiz</title>
   </head>
   <body>
-    <div class="gamePrincipal">
-      <header>
-        <h1 class="glow-stop">Cinema Quiz</h1>
-        <p id="count"></p>
-      </header>
+    <header>
+      <h1 class="game-title" onclick="goHome()">CINEMA QUIZ</h1>
+    </header>
 
-      <main>
-        <div id="question">
-          <h2 id="questionText" class="scaleAni">...</h2>
-        </div>
-        <div id="questions">
-          <button class="question leftAni" id="first">...</button>
-          <button class="question rightAni" id="second">...</button>
-          <button class="question leftAni" id="third">...</button>
-          <button class="question rightAni" id="fourth">...</button>
-        </div>
-      </main>
+    <div class="quiz-container">
+      <h2 id="question-text">Loading question...</h2>
+      <div id="progress-bar-container">
+        <div id="progress-bar"></div>
+      </div>
+      <div id="answers-container"></div>
+      <p id="timer">⏳ Time: <span id="time-left">10</span> s</p>
+      <p id="score">⭐ Score: <span id="score-value">0</span></p>
     </div>
-    <script src="./js/script.js"></script>
+    <footer>
+      <p>
+        &copy;2024
+        <a href="https://github.com/TheBraisgf" target="_blank">Brais</a> &
+        <a href="https://github.com/PabloBeRui" target="_blank">Pablo</a>
+      </p>
+    </footer>
+
+    <audio id="correct-sound" src="/sounds/correct.mp3"></audio>
+    <audio id="fail-sound" src="/sounds/fail.mp3"></audio>
+    <script>
+      function goHome() {
+        window.location.href = "index.html";
+      }
+    </script>
+
+    <script src="/js/script.js"></script>
   </body>
 </html>

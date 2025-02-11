@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+body {
+  font-family: "Press Start 2P", cursive;
+  background: #2c2c3c;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Título con efecto neón */
+.game-title {
+  font-size: 4rem;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px #ffff33, 0 0 20px #ffea00, 0 0 30px #ffd700;
+  margin-top: 20vh;
+}
+
+/* Botón de inicio estilo retro */
+.start-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 40px;
+  font-size: 1.5rem;
+  color: red;
+  border: 3px solid red;
+  background: transparent;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.start-button:hover {
+  background: red;
+  color: white;
+  box-shadow: 0 0 15px red;
+}
+
+/* Footer con enlaces */
+footer {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+footer a {
+  color: #34c759;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

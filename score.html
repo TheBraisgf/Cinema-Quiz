@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cinema Quiz - Scores</title>
+    <link rel="stylesheet" href="/css/score.css" />
+      <link rel="shortcut icon" href="/img/quiz.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <h1 class="game-title" onclick="goHome()">CINEMA QUIZ</h1>
+    </header>
+
+    <div class="score-container">
+      <h1 class="neon-title">¡Finish!</h1>
+      <p id="final-score">Your Score: <span>0</span></p>
+      <a class="start-button" href="index.html">Restart</a>
+
+      <div class="share-buttons">
+        <button class="share-btn twitter" onclick="shareOnX()">
+          🐦 Share on X
+        </button>
+        <button class="share-btn whatsapp" onclick="shareOnWhatsApp()">
+          📱 Share on WhatsApp
+        </button>
+        <button class="share-btn email" onclick="shareByEmail()">
+          📧 Share by Email
+        </button>
+      </div>
+    </div>
+    <footer>
+     <footer>
+      <p>
+        &copy;2024
+        <a href="https://github.com/TheBraisgf" target="_blank">Brais</a> &
+        <a href="https://github.com/PabloBeRui" target="_blank">Pablo</a>
+      </p>
+    </footer>
+    <audio id="win-sound" src="/sounds/win.mp3"></audio>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const score = localStorage.getItem("cinemaQuizScore") || 0;
+        document
+          .getElementById("final-score")
+          .querySelector("span").textContent = score;
+        document.getElementById("win-sound").play();
+      });
+
+      function shareOnX() {
+        const score = localStorage.getItem("cinemaQuizScore") || 0;
+        const shareText = `I get ${score} points on Cinema Quiz! 🎬🔥 Try to beat me! https://cinemaquiz.netlify.app/`;
+        window.open(
+          `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+            shareText
+          )}`,
+          "_blank"
+        );
+      }
+
+      function shareOnWhatsApp() {
+        const score = localStorage.getItem("cinemaQuizScore") || 0;
+        const message = `I get ${score} points on Cinema Quiz! 🎬🔥 Try to beat me! https://cinemaquiz.netlify.app/`;
+        window.open(
+          `https://wa.me/?text=${encodeURIComponent(message)}`,
+          "_blank"
+        );
+      }
+
+      function shareByEmail() {
+        const score = localStorage.getItem("cinemaQuizScore") || 0;
+        const subject = "¡Desafío de Cinema Quiz!";
+        const body = `I get ${score} points on Cinema Quiz! 🎬🔥 Try to beat me! https://cinemaquiz.netlify.app/`;
+        window.open(
+          `mailto:?subject=${encodeURIComponent(
+            subject
+          )}&body=${encodeURIComponent(body)}`
+        );
+      }
+
+      function goHome() {
+        window.location.href = "index.html";
+      }
+    </script>
+    <script>
+      function goHome() {
+        window.location.href = "index.html";
+      }
+    </script>
+
+  </body>
+</html>

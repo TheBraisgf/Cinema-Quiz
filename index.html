@@ -1,27 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="shortcut icon" href="/img/quiz.ico" type="image/x-icon" />
     <title>Cinema Quiz</title>
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="shortcut icon" href="/img/quiz.ico" type="image/x-icon" />
   </head>
   <body>
-    <div id="principal">
-      <header>
-        <h1 class="glow" id="title">CINEMA QUIZ</h1>
-      </header>
+    <header>
+      <h1 class="game-title" onclick="goHome()">CINEMA QUIZ</h1>
+    </header>
 
-      <main>
-        <a class="start" href="tutorial.html" id="start">Start</a>
-      </main>
-    </div>
-    <footer>
-      <a target="_blank" href="https://github.com/TheBraisgf/Cinema-Quiz">
-        Copyright 2022 Pablo & Brais-HackABoss</a
+    <div class="container">
+      <a class="start-button" href="tutorial.html" onclick="playStartSound()"
+        >Start</a
       >
+    </div>
+
+    <footer>
+      <p>
+        &copy;2024
+        <a href="https://github.com/TheBraisgf" target="_blank">Brais</a> &
+        <a href="https://github.com/PabloBeRui" target="_blank">Pablo</a>
+      </p>
     </footer>
+
+    <audio id="start-sound" src="/sounds/start.mp3"></audio>
+    <script>
+      function playStartSound() {
+        document.getElementById("start-sound").play();
+      }
+
+      function goHome() {
+        window.location.href = "index.html";
+      }
+    </script>
   </body>
 </html>
